@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mensagem com Música</title>
+  <style>
+    @font-face {
+      font-family: 'Ancient';
+      src: url('Ancient.ttf') format('truetype');
+    }
+    body {
+      background: #121212;
+      color: white;
+      font-family: 'Ancient', Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+    .texto {
+      font-size: 1.5em;
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #1db954;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #17a140;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="audio" loop>
+    <source src="musica.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <div class="texto">
+    <p>Este texto é uma tentativa de entender o que não cabe em palavras,  
+    um desabafo em meio às noites em claro,  
+    onde o silêncio grita o que o coração não sabe dizer.</p>
+
+    <p>É sobre o que fica quando o mundo apaga as luzes,  
+    quando só restam as sensações —  
+    a vontade de estar perto, mesmo estando longe,  
+    a luta entre o desejo e o medo,  
+    o medo de perder e o medo de sentir demais.</p>
+
+    <p>Aqui está o que eu não disse em voz alta,  
+    mas que sussurrei no escuro.</p>
+
+    <p>"You've got the devil in your eyes"  
+    E eu já não sei se você tem o diabo em seus olhos  
+    Mas sei que tudo em mim queima quando você olha para mim</p>
+
+    <p>Acho que se eu decidisse tentar esquecer de como você faz eu me sentir  
+    Precisaria mais que a distância para que isso fosse possível  
+    Porque como eu disse uma vez, você não precisou usar as suas mãos para me tocar</p>
+
+    <p>Você sempre esteve presente em mim  
+    Desde que te conheci  
+    E acho que antes  
+    Esbarrar em você foi como estar predestinado a um fim  
+    E mesmo que o peso por não te ter por inteiro seja difícil de carregar  
+    Prefiro encará-lo do que algum dia desejar não ter te conhecido</p>
+
+    <p>Enquanto escrevo cada uma dessas palavras  
+    Penso que nenhuma soará melhor do que o aconchego que sinto com as suas</p>
+
+    <p>E cada vez que fecho os meus olhos desejo falar tudo o que sinto por você  
+    Mas não sei se faria sentido se eu dissesse que  
+    Às vezes quero passar minhas mãos no seu rosto e dizer enquanto olho nos seus olhos que  
+    você desafia todos os meus sentidos</p>
+
+    <p>E se você se pergunta o que quero com você  
+    Eu diria que não é a pergunta correta de se fazer  
+    Deveria ser o que você me faz querer</p>
+
+    <p>Você me faz querer que o tempo pare em todos os momentos que escuto a sua voz  
+    Você me faz querer que no dia seguinte saia a notícia que alguém desenvolveu uma máquina de teletransporte  
+    E que essa máquina nos levará em segundos para o lugar que pensarmos  
+    E eu não minto  
+    Eu estaria com você em um segundo  
+    Porque penso em você a cada milésimo</p>
+
+    <p>O universo me colocou distante  
+    E eu até entendo  
+    Nem o mais perto possível seria o suficiente</p>
+
+    <p>E hoje  
+    Escolho usar da desculpa mais esfarrapada possível para dizer aquilo que não pode ser dito em voz alta  
+    Vou usar do sol já ter dado espaço para a lua</p>
+
+    <p>Porque assim como em Do Wanna Know  
+    De fato as noites foram feitas principalmente  
+    Para dizer coisas que não se pode dizer no dia seguinte</p>
+
+    <p>Enquanto o escuro dos seus olhos me dão coragem para assumir  
+    Que mesmo já estando mergulhada em diversos livros  
+    Como uma leitora ácida  
+    Nada seria mais interessante do que ler você  
+    Porque eu poderia fazer isso por horas  
+    Como quem desvenda cada curva do seu corpo  
+    Procurando entender porque ainda existem tantos céticos  
+    Se amor, você é como um anjo para mim</p>
+
+    <p>E eu encaro todos os meus pecados quando danço com você em minha mente  
+    Desejando entender porque as chamas não foram destinadas ao paraíso  
+    Se quando estou com você  
+    Sinto minha pele derreter  
+    Enquanto sussurro no seu ouvido que prefiro descansar nos seus braços</p>
+
+    <p>E minha mente me condena por tudo aquilo que queria ser pra você  
+    Tenho uma briga acontecendo dentro de mim  
+    Que não consigo vencer  
+    Perco todas as vezes para mim mesma  
+    Sem saber meu destino  
+    E sem saber o que o mundo espera de mim  
+    Sinceramente, nem eu sei o que espero de mim mesma</p>
+
+    <p>E no meio de todas as dúvidas  
+    A única certeza que estou tendo  
+    É que não posso passar um dia sem você</p>
+
+    <p>E eu tenho um turbilhão de sentimentos  
+    Que me fazem não me desejar para ninguém  
+    Mas às vezes me pego desejando para você</p>
+
+    <p>E uma das minhas músicas preferidas  
+    Tem sido a que diz  
+    "eu deixaria o mundo queimar por você"  
+    E eu deixaria  
+    Porque mesmo que eu acordasse no outro dia  
+    No pós fim do mundo  
+    Em cinzas  
+    Eu só precisaria do que sempre precisei  
+    Uma madrugada com você</p>
+
+    <p>- com aquele sentimento lá,  
+    para o garoto que bagunçou minha mente</p>
+  </div>
+
+  <button id="playButton" style="display:none;">▶️ Tocar música</button>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playButton = document.getElementById('playButton');
+
+    window.onload = () => {
+      audio.play().catch(() => {
+        playButton.style.display = 'inline-block';
+      });
+    };
+
+    playButton.onclick = () => {
+      audio.play();
+      playButton.style.display = 'none';
+    };
+  </script>
+</body>
+</html>
